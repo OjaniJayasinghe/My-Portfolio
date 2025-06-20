@@ -101,7 +101,7 @@ const styles = {
     justifyContent: "space-between",
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     boxShadow: "0 3px 10px rgba(0, 0, 0, 0.4)",
-    width: "100%",
+    width: "auto",
     zIndex: 999,
   },
   titleGradient: {
