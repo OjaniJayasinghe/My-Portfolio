@@ -48,7 +48,7 @@ const ChatBotWidget = () => {
       return 'I’m currently studying Data Science at SLIIT 🎓';
     }
 
-    if (lower.includes('available') || lower.includes('freelance')) {
+    if (lower.includes('availabile') || lower.includes('freelance')) {
       return 'Yes, I’m available for freelance or collaborative work. Let’s connect! 🤝';
     }
 
