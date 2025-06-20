@@ -65,7 +65,7 @@ const styles = {
     padding: "1.2rem 2.5rem",
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     boxShadow: "0 3px 10px rgba(0, 0, 0, 0.4)",
-    zIndex: 0,
+    zIndex: 900,
   },
   titleGradient: {
     fontSize: "2rem",
