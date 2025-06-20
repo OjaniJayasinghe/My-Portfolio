@@ -57,7 +57,7 @@ const FallingStarsBackground = () => {
       }
     }
 
-    const starsCount = 70;
+    const starsCount = 50;
     const stars = [];
 
     for (let i = 0; i < starsCount; i++) {

@@ -8,9 +8,7 @@ const Header = () => {
   const navItems = ["About", "Projects", "Skills", "Contact"];
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
 
     const handleScroll = () => {
       setShowScrollInfo(window.scrollY > 100);
@@ -35,16 +33,30 @@ const Header = () => {
         gap: isMobile ? "0.5rem" : "0",
       }}
     >
-      <div>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <h1 style={styles.titleGradient}>❮ Portfolio ❯</h1>
-        {showScrollInfo && (
-          <div style={styles.scrollInfo}>
-            <span style={styles.name}>Ojani Jayasinghe</span>
-            <span style={{ ...styles.roles, display: isMobile ? "block" : "inline" }}>
-              Developer | Data Engineer | Data Science Explorer | AI Enthusiast | UI/UX Designer
-            </span>
-          </div>
-        )}
+
+        {/* Smooth animated scroll info */}
+        <div
+          style={{
+            ...styles.scrollInfo,
+            maxHeight: showScrollInfo ? "80px" : "0",
+            opacity: showScrollInfo ? 1 : 0,
+            transition: "all 0.5s ease",
+            overflow: "hidden",
+          }}
+        >
+          <span style={styles.name}>Ojani Jayasinghe</span>
+          <span
+            style={{
+              ...styles.roles,
+              display: isMobile ? "block" : "inline",
+              marginTop: isMobile ? "0.3rem" : "0",
+            }}
+          >
+            Developer | Data Engineer | Data Science Explorer | AI Enthusiast | UI/UX Designer
+          </span>
+        </div>
       </div>
 
       <nav>
@@ -64,8 +76,7 @@ const Header = () => {
                 style={{
                   ...styles.navLink,
                   color: hoverIndex === index ? "#00e6e6" : "#cccccc",
-                  textShadow:
-                    hoverIndex === index ? "0 0 6px #00e6e6" : "none",
+                  textShadow: hoverIndex === index ? "0 0 6px #00e6e6" : "none",
                 }}
                 onMouseEnter={() => setHoverIndex(index)}
                 onMouseLeave={() => setHoverIndex(null)}
@@ -116,8 +127,7 @@ const styles = {
     transition: "all 0.3s ease",
   },
   scrollInfo: {
-    marginTop: "0.5rem",
-    animation: "fadeIn 0.5s ease-in-out",
+    marginTop: "0.3rem",
   },
   name: {
     display: "block",
