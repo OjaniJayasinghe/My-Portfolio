@@ -3,25 +3,44 @@ import React, { useState, useEffect } from "react";
 const Header = () => {
   const [hoverIndex, setHoverIndex] = useState(null);
   const [showScrollInfo, setShowScrollInfo] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
   const navItems = ["About", "Projects", "Skills", "Contact"];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollInfo(window.scrollY > 100); // Show info after scrolling down
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
 
+    const handleScroll = () => {
+      setShowScrollInfo(window.scrollY > 100);
+    };
+
+    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <header style={styles.header}>
+    <header
+      style={{
+        ...styles.header,
+        flexDirection: isMobile ? "column" : "row",
+        alignItems: isMobile ? "flex-start" : "center",
+        padding: isMobile ? "1rem" : "1.2rem 2.5rem",
+        gap: isMobile ? "0.5rem" : "0",
+      }}
+    >
       <div>
         <h1 style={styles.titleGradient}>❮ Portfolio ❯</h1>
         {showScrollInfo && (
           <div style={styles.scrollInfo}>
             <span style={styles.name}>Ojani Jayasinghe</span>
-            <span style={styles.roles}>
+            <span style={{ ...styles.roles, display: isMobile ? "block" : "inline" }}>
               Developer | Data Engineer | Data Science Explorer | AI Enthusiast | UI/UX Designer
             </span>
           </div>
@@ -29,9 +48,17 @@ const Header = () => {
       </div>
 
       <nav>
-        <ul style={styles.navList}>
+        <ul
+          style={{
+            ...styles.navList,
+            flexDirection: isMobile ? "column" : "row",
+            alignItems: isMobile ? "flex-start" : "center",
+            gap: isMobile ? "0.5rem" : "0",
+            marginTop: isMobile ? "0.5rem" : "0",
+          }}
+        >
           {navItems.map((item, index) => (
-            <li key={item} style={styles.navItem}>
+            <li key={item} style={isMobile ? { marginLeft: 0 } : styles.navItem}>
               <a
                 href={`#${item.toLowerCase()}`}
                 style={{
@@ -61,8 +88,6 @@ const styles = {
     color: "#fff",
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
-    padding: "1.2rem 2.5rem",
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     boxShadow: "0 3px 10px rgba(0, 0, 0, 0.4)",
     width: "100%",
@@ -80,7 +105,6 @@ const styles = {
     listStyle: "none",
     margin: 0,
     padding: 0,
-    marginLeft: "-450px", // Adjusted for better alignment
   },
   navItem: {
     marginLeft: "2rem",

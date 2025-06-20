@@ -7,8 +7,15 @@ const FallingStarsBackground = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    canvas.width = width * devicePixelRatio;
+    canvas.height = height * devicePixelRatio;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
 
     // Star class
     class Star {
@@ -21,7 +28,8 @@ const FallingStarsBackground = () => {
         this.size = Math.random() * 1.2 + 0.2;
         this.speed = Math.random() * 1 + 0.07;
         this.opacity = Math.random() * 0.5 + 0.5;
-        this.opacityChange = (Math.random() * 0.005 + 0.002) * (Math.random() < 0.5 ? 1 : -1);
+        this.opacityChange =
+          (Math.random() * 0.005 + 0.002) * (Math.random() < 0.5 ? 1 : -1);
       }
       update() {
         this.y += this.speed;
@@ -68,8 +76,14 @@ const FallingStarsBackground = () => {
     animate();
 
     const handleResize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      width = window.innerWidth;
+      height = window.innerHeight;
+
+      canvas.width = width * devicePixelRatio;
+      canvas.height = height * devicePixelRatio;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.scale(devicePixelRatio, devicePixelRatio);
     };
 
     window.addEventListener("resize", handleResize);
@@ -84,8 +98,8 @@ const FallingStarsBackground = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        display: "flex",
-        height: "100vh",
+        width: "100%",
+        height: "100%",
         zIndex: 0,
         pointerEvents: "none",
         background: "#0d1b2a",
