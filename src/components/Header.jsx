@@ -80,6 +80,7 @@ const styles = {
     listStyle: "none",
     margin: 0,
     padding: 0,
+    marginLeft: "-450px", // Adjusted for better alignment
   },
   navItem: {
     marginLeft: "2rem",
