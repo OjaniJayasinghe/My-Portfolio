@@ -7,20 +7,13 @@ const Header = () => {
 
   const navItems = ["About", "Projects", "Skills", "Contact"];
 
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-
+ useEffect(() => {
     const handleScroll = () => {
-      setShowScrollInfo(window.scrollY > 100);
+      setShowScrollInfo(window.scrollY > 100); // Show info after scrolling down
     };
 
-    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
