@@ -84,7 +84,7 @@ const FallingStarsBackground = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100vw",
+        width: "auto",
         height: "100vh",
         zIndex: 0,
         pointerEvents: "none",
