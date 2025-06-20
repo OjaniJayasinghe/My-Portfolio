@@ -75,7 +75,13 @@ const styles = {
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
   },
-  
+  navList: {
+    display: "flex",
+    listStyle: "none",
+    marginleft: 0,
+    padding: 0,
+    flex
+  },
   navItem: {
     marginLeft: "2rem",
   },
