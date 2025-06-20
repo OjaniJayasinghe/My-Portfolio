@@ -78,9 +78,8 @@ const styles = {
   navList: {
     display: "flex",
     listStyle: "none",
-    marginleft: 0,
+    margin: 0,
     padding: 0,
-    flex
   },
   navItem: {
     marginLeft: "2rem",
