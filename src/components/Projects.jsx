@@ -117,6 +117,17 @@ const Projects = () => {
       },
     },
     {
+      title: "All in one Productivity App",
+      category: "App Development",
+      description: "An Android app built with Kotlin in Android Studio, designed to boost daily efficiency. It integrates key features including an alarm clock, daily schedule tracker, and a stopwatch/timer, all in one intuitive interface. Ideal for students and professionals aiming to manage their time effectively.",
+      year: 2024,
+      image: "allinoneapp.webp",
+      techStack: ["Figma","Android Studio", "Kotlin"],
+      links: {
+        code: "https://github.com/OjaniJayasinghe/All-in-one-Productivity-App",
+      },
+    },
+    {
       title: "Food Delivery App",
       category: "App Development",
       description: "A modern, user-friendly mobile app interface designed to simplify online food ordering. The design includes intuitive navigation, restaurant browsing, real-time order tracking, and a sleek checkout experience — all crafted to enhance user convenience and engagement. Built with a focus on UX/UI best practices using Figma.",
@@ -138,17 +149,7 @@ const Projects = () => {
         code: "https://github.com/OjaniJayasinghe/E-Learning-App",
       },
     },
-    {
-      title: "All in one Productivity App",
-      category: "App Development",
-      description: "An Android app built with Kotlin in Android Studio, designed to boost daily efficiency. It integrates key features including an alarm clock, daily schedule tracker, and a stopwatch/timer, all in one intuitive interface. Ideal for students and professionals aiming to manage their time effectively.",
-      year: 2024,
-      image: "allinoneapp.webp",
-      techStack: ["Figma","Android Studio", "Kotlin"],
-      links: {
-        code: "#",
-      },
-    },
+    
   ];
 
   const filteredProjects = selectedCategory === "All"
