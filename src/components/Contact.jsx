@@ -65,12 +65,12 @@ const Contact = () => {
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/",
+    url: "https://github.com/OjaniJayasinghe",
     icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg",
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/",
+    url: "https://www.linkedin.com/in/ojani-jayasinghe-67581225b",
     icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg",
   },
 ];
