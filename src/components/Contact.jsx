@@ -16,14 +16,14 @@ const Contact = () => {
       >
         <span role="img" aria-label="email" style={styles.emoji}>📧</span>
         <a
-          href="mailto:ojani@example.com"
+          href="mailto:ojanijayasinghe123@gmail.com"
           style={{
             ...styles.emailLink,
             color: hovered === "email" ? "#f4d35e" : "#00e6e6",
             textShadow: hovered === "email" ? "0 0 6px #f4d35e" : "none",
           }}
         >
-          ojani@example.com
+          ojanijayasinghe123@gmail.com
         </a>
       </div>
 
