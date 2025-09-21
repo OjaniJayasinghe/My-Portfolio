@@ -7,9 +7,14 @@ const Hero = () => (
 
     <div style={styles.buttonGroup}>
       <a href="#projects" style={styles.primaryButton}>View My Work</a>
-      <a href="/Ojani Jayasinghe CV.pdf" download style={styles.secondaryButton}>
+      <a 
+        href="/Ojani-Jayasinghe-CV.pdf" 
+        download="Ojani-Jayasinghe-CV.pdf" 
+        style={styles.secondaryButton}
+>
         ⬇ Download CV
       </a>
+
     </div>
   </section>
 );
