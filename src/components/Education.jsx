@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 const educations = [
   {
-    degree: 'BSc in Information Technology Specializing in Data Science',
-    institution: 'SLITT',
+    degree: 'BSc(Hons) in Information Technology Specializing in Data Science',
+    institution: 'SLIIT',
     year: '2022 - Present',
     description: 'Specialized in Data Science & Web Development.',
   },
